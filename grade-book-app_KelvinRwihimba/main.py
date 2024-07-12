@@ -76,9 +76,10 @@ def student_menu(gradebook):
     while True:
         print("\nStudent Menu:")
         print("1. View Courses")
-        print("2. Take Test")
-        print("3. View Transcript")
-        print("4. Exit to Main Menu")
+        print("2. Learn Courses")
+        print("3. Take Test")
+        print("4. View Transcript")
+        print("5. Exit to Main Menu")
 
         choice = input("Enter your choice: ")
 
@@ -91,6 +92,8 @@ def student_menu(gradebook):
             else:
                 print("You are not enrolled in any courses.")
         elif choice == '2':
+            print("click here to learn(https://docs.google.com/presentation/d/1fqoRKIdtH5APhsZwcjrQOMx6iflsHrRKym_LoZr7Cdk/edit?usp=sharing)")
+        elif choice == '3':
             if student.courses_registered:
                 for course in student.courses_registered:
                     grade = float(input(f"Enter grade for {course.name}: "))
@@ -100,7 +103,7 @@ def student_menu(gradebook):
                 print(f"Your GPA has been updated: {student.GPA}")
             else:
                 print("You are not enrolled in any courses.")
-        elif choice == '3':
+        elif choice == '4':
             transcript = gradebook.generate_transcript(email)
             if transcript:
                 print(f"Transcript for {email}:")
@@ -110,7 +113,7 @@ def student_menu(gradebook):
                 print(f"GPA: {transcript['GPA']}")
             else:
                 print("Student not found.")
-        elif choice == '4':
+        elif choice == '5':
             break
         else:
             print("Invalid choice. Please try again.")
